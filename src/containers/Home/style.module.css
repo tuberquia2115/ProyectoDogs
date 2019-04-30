@@ -1,0 +1,20 @@
+.containerMenu {
+    /* padding-bottom: 3rem;
+    margin:  30px 30px 0 30px; */
+    display: flex;
+    flex-direction: row;
+    background-color:#f0f2f5;
+    justify-content: space-between;
+}
+
+.containercardsdogs {
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+}
+
+
+.containersCardsdescriptions {
+    margin: 10px;
+    width: 500px;
+}
