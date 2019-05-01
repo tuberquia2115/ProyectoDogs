@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Cardsdescriptions from '../../components/CardsDescriptions/Cardsdescriptions';
+import CardsdescriptionsTitle from '../../components/CardsDescriptionsTitle/CardsdescriptionsTitle';
 import CardsDogs from '../../components/CardsDogs/CardsDogs';
 import Url from '../../constants/Urlapi/Apiurl';
 import classs from './style.module.css';
@@ -44,7 +44,7 @@ export default class Home extends Component {
     return (
       <div className={classs.containerMenu}>
         <div className={classs.containersCardsdescriptions}>
-          <Cardsdescriptions
+          <CardsdescriptionsTitle
             onClickb={this.headerl()}
           >It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
@@ -52,7 +52,7 @@ export default class Home extends Component {
             Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
              and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
               Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-            </Cardsdescriptions>
+            </CardsdescriptionsTitle>
         </div>
         <div>
           <CardsDogs

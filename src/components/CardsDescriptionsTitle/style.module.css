@@ -11,8 +11,14 @@
 }
 
 .childrend {
+    color: black;
     font-size: 1rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: justify;
     padding: 0 0 0 10px;
+    margin: 0px;
+
+}
+.sections{
+    padding-top: 20px;
 }
