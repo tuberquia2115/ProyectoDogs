@@ -59,7 +59,6 @@ export default class Home extends Component {
             onChanged={this.headerl()}
             className={classs.containercardsdogs}
             img={this.state.ramdomImg}
-            name={this.state.list[0]}
           />
         </div>
 
