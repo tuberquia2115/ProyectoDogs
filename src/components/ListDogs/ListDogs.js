@@ -1,73 +1,75 @@
 import React, { Component } from "react";
-import { Row, Col } from "antd";
-import { Pagination } from 'antd'
+import {Spin} from "antd";
 import url from "../../constants/Urlapi/Apiurl";
 import CardsDogs from "../CardsDogs/CardsDogs";
 import classs from './style.module.css'
+import Paginations from '../Paginations/Paginations'
 export default class ListDogs extends Component {
   constructor(props) {
     super(props);
     this.state = {
       lisImg: [],
-      currentPage: 1,
-      todosPerPage: 50
+      indexImg: 1,
+      loading: false
     };
   }
-  componentWillMount() {
-    fetch(url.urlImg)
-      .then(res => res.json())
-      .then(res => {
-        this.setState({ lisImg: res.message })
-        console.log("esta es la data que llega de imagenes", res)
-      });
-  }
-   handleClick(event) {
+  getData() {
     this.setState({
-      currentPage: Number(event.target.id)
-   });
- }
-  hadlerOnChanged(){
-    console.log("jose")
+      lisImg: [],
+      loading: true
+    })
+    fetch(url.urlImg)
+      .then(json => json.json())
+      .then((json) => {
+        console.log(" las dataaaa", json.message);
+        this.setState({
+          lisImg: json.message,
+          loading: false
+        })
+      })
+      .catch(e => {
+        console.error(e)
+        this.setState({
+          lisImg: [],
+          loading: false
+        })
+      })
   }
 
+  btnClick = (e) => {
+    const idImg = e.target.value;
+    this.setState({
+      idImg
+    })
+    this.getData();
+  }
+
+  componentDidMount() {
+    
+    this.getData();
+  }
+
+
+  hadlerOnChanged = () => {
+    alert("presionastes un perro")
+  }
 
   render() {
-    const { lisImg, currentPage, todosPerPage } = this.state;
 
-     const indexOfLastTodo = currentPage * todosPerPage;
-    const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
-     const currentTodos = lisImg.slice([indexOfFirstTodo,indexOfLastTodo]);
 
-     const renderTodos = currentTodos.map((index, value) => {
-      return <CardsDogs img={value} key={index} onChanged={this.hadlerOnChanged()}/>;
-    });
-
-    const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(lisImg.length / todosPerPage); i++) {
-      pageNumbers.push(i);
-    }
-
-    const renderPageNumbers = pageNumbers.map(number => {
+    if (this.state.loading) {
       return (
-        <li
-        key={number}
-        id={number}
-        onClick={this.hadlerOnChanged()}
-      >
-        {number}
-      </li>
-       
-      );
-    });
+        <Spin size="large" tip="Loading..." style={{padding:"10px"}}/>
+      )
+    }
     return (
-      <div style={{ padding: "5rem" }}>
-        <div>
-          {renderTodos}
+      <div  className={classs.containerBody}>
+        <div className ={classs.containerCards}>
+          <CardsDogs img={this.state.lisImg} className={classs.container} onClick={this.hadlerOnChanged} />
         </div>
-        <div>
-          {renderPageNumbers}
-        </div>
+        <Paginations idImg={this.state.lisImg} onClick={this.btnClick}  />
       </div>
     );
   }
 }
+

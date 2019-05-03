@@ -1,3 +1,13 @@
-.container{
+.container {
+    padding: 0;
+}
+
+.containerCards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.containerBody {
     background-color: blue;
+    height: 40rem
 }

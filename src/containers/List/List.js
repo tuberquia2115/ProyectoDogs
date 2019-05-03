@@ -1,8 +1,13 @@
 import React, { Component } from "react";
-import "./style.css";
+import  classs from "./style.module.css";
 import ListDogs from "../../components/ListDogs/ListDogs";
 export default class List extends Component {
   render() {
-    return <ListDogs />;
+
+    return (
+      <div  className={classs.container}>
+        <ListDogs />
+      </div>
+    )
   }
 }

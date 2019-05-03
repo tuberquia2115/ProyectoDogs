@@ -9,15 +9,14 @@ export default class CardsDogs extends Component {
     onChanged: PropTypes.object
   }
   render() {
-    const { className } = this.props;
+    const { className, onClick } = this.props;
     return (
       <div className={className} >
         {this.props.img.map((value, key) => {
           return (
-            <Card className={classs.card} hoverable key={key} onChange={this.props.onChanged}
-              cover={<img src={value} className={classs.img} alt="Dogs" />} >
-              
-            </Card>
+            <div  key ={key}className={classs.card} onClick={onClick}>
+              <img src={value} className={classs.img} alt="Dogs" />
+            </div>
           )
 
         })}
