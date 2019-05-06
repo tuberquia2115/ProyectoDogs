@@ -1,26 +1,27 @@
-import React, { Component } from 'react'
-import { Card } from 'antd'
-import PropTypes from 'prop-types';
-import classs from './style.module.css';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import classs from "./style.module.css";
+import TarjetaDescriptionsDosg from '../TarjetaDescriptionsDogs/TarjetaDescriptionsDogs'
 export default class CardsDogs extends Component {
-
   static propTypes = {
     className: PropTypes.string.isRequired,
     onChanged: PropTypes.object
-  }
+  };
   render() {
-    const { className, onClick } = this.props;
+    const { className } = this.props;
     return (
-      <div className={className} >
+      <div className={className}>
         {this.props.img.map((value, key) => {
           return (
-            <div  key ={key}className={classs.card} onClick={onClick}>
-              <img src={value} className={classs.img} alt="Dogs" />
-            </div>
-          )
-
+            <Link to="/detail">
+              <div key={key} className={classs.card}>
+                <img src={value} alt="Dogs" />
+              </div>
+            </Link>
+          );
         })}
-
-      </div>)
+      </div>
+    );
   }
 }

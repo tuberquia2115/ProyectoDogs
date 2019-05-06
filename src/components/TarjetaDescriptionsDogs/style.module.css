@@ -1,0 +1,39 @@
+.container{
+   display: flex;
+   align-items: center;
+   padding: 4rem;
+}
+.typeTitle {
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+.childrend {
+    color: black;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: justify;
+    padding: 0 0 0 10px;
+    margin: 0px;
+
+}
+.containerImgDogs{
+    padding: 5px;
+    border-radius: 10px;
+    margin: auto;
+}
+.containerImg{
+    object-fit: cover;
+    padding: 5px;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+.containerImgDogs :hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.containerChildren{
+    margin: auto;
+    width: 40rem;
+}

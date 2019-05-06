@@ -1,5 +1,9 @@
-.container {
-    padding: 0;
+.containerImg {
+    padding: 0px;
+    margin: 0px;
+    height: 40rem;
+    
+
 }
 
 .containerCards {

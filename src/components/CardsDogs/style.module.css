@@ -1,10 +1,9 @@
 
 .card {
-    float: right;
     padding: 5px;
-    margin:  40px 20px 0 0;
     border-radius: 10px;
     height: 260px;
+    margin: auto;
 }
 
 .card img {
