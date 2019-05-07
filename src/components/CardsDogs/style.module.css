@@ -1,9 +1,11 @@
 
 .card {
+    float: right;
     padding: 5px;
     border-radius: 10px;
     height: 260px;
-    margin: auto;
+    margin: 1rem 2.9rem 0 0;
+    box-sizing: content-box
 }
 
 .card img {
@@ -17,4 +19,5 @@
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.1)
 }

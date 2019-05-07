@@ -2,6 +2,7 @@
     font-size: 1.5rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    margin: 0px;
 }
 
 .button {
@@ -20,5 +21,5 @@
 
 }
 .sections{
-    padding-top: 20px;
+    padding-top: 32px;
 }

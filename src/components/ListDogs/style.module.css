@@ -1,17 +1,15 @@
-.containerImg {
-    padding: 0px;
-    margin: 0px;
-    height: 40rem;
-    
 
-}
 
 .containerCards {
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
 }
 
-.containerBody {
-    background-color: blue;
-    height: 40rem
+
+.spiner{
+    margin: 18.2rem;
+    display: flex;
+    justify-content: center;
+    
 }

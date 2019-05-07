@@ -35,5 +35,5 @@
 
 .containerChildren{
     margin: auto;
-    width: 40rem;
+  width: fit-content;
 }

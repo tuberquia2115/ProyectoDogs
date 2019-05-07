@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Spin } from "antd";
+import { Spin, Pagination } from "antd";
 import { Link, Switch } from "react-router-dom";
 import url from "../../constants/Urlapi/Apiurl";
 import CardsDogs from "../CardsDogs/CardsDogs";
@@ -45,25 +45,17 @@ export default class ListDogs extends Component {
     });
     this.getData();
   };
-
   componentDidMount() {
     this.getData();
   }
 
   render() {
     if (this.state.loading) {
-      return <Spin size="large" tip="Loading..." style={{ padding: "10px" }} />;
+      return <Spin size="large" tip="Loading..." className={classs.spiner} />;
     }
     return (
-      <div className={classs.containerBody}>
-        <Link  to ="/detail">
-          <CardsDogs
-            img={this.state.lisImg}
-            className={classs.containerImg}
-            onClick={this.hadlerClick}
-          />
-        </Link>
-
+      <div className={classs.containerCards}>
+        <CardsDogs img={this.state.lisImg} onClick={this.hadlerClick} />
         <Paginations idImg={this.state.lisImg} onClick={this.btnClick} />
       </div>
     );
