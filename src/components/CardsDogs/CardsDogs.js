@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import classs from "./style.module.css";
-import TarjetaDescriptionsDogs from "../TarjetaDescriptionsDogs/TarjetaDescriptionsDogs";
 export default class CardsDogs extends Component {
   static propTypes = {
     className: PropTypes.string,
@@ -11,12 +10,14 @@ export default class CardsDogs extends Component {
     id: PropTypes.any
   };
   render() {
-    const { className, img, id} = this.props;
+    const { className, img} = this.props;
+   
     return (
+    
       <div className={className}>
         {img ? img.map((value, key) => {    
           return ( 
-            <Link to="/detail" id={id}> 
+            <Link to={{ pathname: '/detail/',state: {img: value}}}> 
               <div key={key} className={classs.card}> 
                 <img src={value} alt="Dogs" />
               </div>

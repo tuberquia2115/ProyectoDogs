@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { Spin, Pagination } from "antd";
-import { Link, Switch } from "react-router-dom";
+import { Spin} from "antd";
 import url from "../../constants/Urlapi/Apiurl";
 import CardsDogs from "../CardsDogs/CardsDogs";
 import classs from "./style.module.css";
 import Paginations from "../Paginations/Paginations";
-import TarjetadescriptionsDogs from "../TarjetaDescriptionsDogs/TarjetaDescriptionsDogs";
 export default class ListDogs extends Component {
   constructor(props) {
     super(props);

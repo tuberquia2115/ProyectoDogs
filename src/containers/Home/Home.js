@@ -3,7 +3,6 @@ import CardsdescriptionsTitle from "../../components/CardsDescriptionsTitle/Card
 import CardsDogs from "../../components/CardsDogs/CardsDogs";
 import Url from "../../constants/Urlapi/Apiurl";
 import classs from "./style.module.css";
-import VerMas from "../../components/Vermas/Vermas.js";
 
 export default class Home extends Component {
   constructor(props) {
