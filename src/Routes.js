@@ -11,7 +11,7 @@ const AppRoutes = () =>
   <App>
     <Switch>
       <Route path="/detail" component={Detail}></Route>
-      <Route exact path="/home" component={Home} />
+      <Route exact path="/" component={Home} />
       <Route exact path="/todos" component={DogsList} />
       <Route exact path="/information" component={Vermas}></Route>
       <Route exact component={page404} />
