@@ -1,16 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import classs from "./style.module.css";
 import PropTypes from "prop-types";
 
-class TarjetaDescriptionsDogs extends Component {
-  render() {
-    const { imgUrl} = this.props;
-    return (
-      <section className={classs.container}> 
-        <div className={classs.containerImgDogs}>
-          <img className={classs.containerImg} alt="Dogs" src={imgUrl} />
-        </div>
-        <div className={classs.containerChildren}>
+const TarjetaDescriptionsDogs = (props) => {
+  const { imgUrl } = props;
+  return (
+    <section className={classs.container}>
+      <div className={classs.containerImgDogs}>
+        <img className={classs.containerImg} alt="Dogs" src={imgUrl} />
+      </div>
+      <div className={classs.containerChildren}>
         <p className={classs.childrend}> Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
@@ -29,11 +28,12 @@ class TarjetaDescriptionsDogs extends Component {
             search for 'lorem ipsum' will uncover many web sites still in their
             infancy. Various versions have evolved over the years, sometimes by
             accident, sometimes on purpose (injected humour and the like).</p>
-        </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  )
+
 }
+
 TarjetaDescriptionsDogs.propTypes = {
   imgUrl: PropTypes.string.isRequired,
 };

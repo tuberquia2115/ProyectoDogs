@@ -1,10 +1,11 @@
 .footer{ 
-    height: 13.2rem;
     background-color: #001529;
     padding: 3rem 0 0px 1rem;
-    margin: 0px;
+    margin: auto;
+    position: relative;
+    height: 250px;
+    width: 100%
 }
 .footer h3,p{
     color: white;
-    margin: 0px;
 }

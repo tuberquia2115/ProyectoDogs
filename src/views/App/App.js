@@ -4,20 +4,19 @@ import './App.css';
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import PropTypes from 'prop-types';
-class App extends React.Component {
-  static propTypes = {
-    children: PropTypes.object.isRequired
-  };
-  render() {
-    return (
-      <div className="App" >
-        <Header
-          items={items}
-        />
-        {this.props.children}
-        <Footer />
-      </div>
-    );
-  }
+const App = (props) => {
+  return (
+    <div className="App" >
+      <Header
+        items={items}
+      />
+      {props.children}
+      <Footer />
+    </div>
+  )
 }
+
 export default App;
+App.propTypes = {
+  children: PropTypes.object.isRequired
+};
