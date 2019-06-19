@@ -23,7 +23,7 @@
     margin: auto;
 }
 .containerImg{
-    object-fit: cover;
+    object-fit: fill;
     padding: 5px;
     width: 300px;
     height: 300px;

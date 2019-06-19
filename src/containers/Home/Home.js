@@ -57,7 +57,6 @@ export default class Home extends Component {
         </div>
         <div style={{ margin: "auto" }}>
           <CardsDogs
-            className={classs.containercardsdogs}
             img={this.state.ramdomImg}
           />
         </div>
