@@ -8,10 +8,10 @@ import PropTypes from "prop-types";
 const App = props => {
   return (
     <div className="App">
-      {/* <Login /> */}
-      <Header items={items} />
+      <Login />
+      {/* <Header items={items} />
       {props.children}
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import propTypes from "prop-types";
+import Registro from "../../../components/RegistroUser/RegistroUsers";
 import { Button, Input, Typography, Form, Icon } from "antd";
 import * as logo from "../../../assets/razas.jpg";
 
@@ -8,8 +9,8 @@ const Login = () => {
   const [pass, setPass] = useState();
   const { Text } = Typography;
 
-  const valueCHangue = e => {
-    console.log(e.target.value);
+  const onClick = (user, pass) => {
+    alert(`Este es el usuario ${user} y la contraseña ${pass}`);
   };
   return (
     <div
@@ -55,8 +56,10 @@ const Login = () => {
         <Form.Item>
           <Input
             prefix={<Icon type="user" />}
-            value={user}
-            onChange={e => valueCHangue(e)}
+            onChange={e => {
+              var user = e.target.value;
+              setUser(user);
+            }}
           />
         </Form.Item>
 
@@ -71,12 +74,21 @@ const Login = () => {
             prefix={<Icon type="lock" />}
             style={{ marginBottom: "1rem" }}
             type="password"
-            value={pass}
+            onChange={e => {
+              var pass = e.target.value;
+              setPass(pass);
+            }}
           />
         </Form.Item>
 
         <Form.Item>
-          <Button type="submit">Iniciar sesión</Button>
+          <Button type="submit" onClick={() => onClick(user, pass)}>
+            Iniciar sesión
+          </Button>
+          <a href="##" style={{ marginLeft: "2rem" }}>
+            {" "}
+            Registar usuario
+          </a>
         </Form.Item>
       </Form>
     </div>
