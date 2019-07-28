@@ -5,7 +5,7 @@ import CardsDogs from "../CardsDogs/CardsDogs";
 import classs from "./style.module.css";
 import Paginations from "../Paginations/Paginations";
 
-const ListDogs = (props) => {
+const ListDogs = () => {
   const [lisImg, setLisImg] = useState([]);
   const [idImagen, setIdImagen] = useState();
   const [loading, setLoading] = useState(false);
@@ -15,7 +15,6 @@ const ListDogs = (props) => {
     fetch(url.urlImg)
       .then(json => json.json())
       .then(json => {
-        console.log(" las dataaaa", json.message);
         setLisImg(json.message);
         setLoading(false);
       })

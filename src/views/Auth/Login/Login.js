@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import propTypes from "prop-types";
 import { Button, Input, Typography, Form, Icon } from "antd";
-import * as logo from "../../assets/razas.jpg";
+import * as logo from "../../../assets/razas.jpg";
 
-const Login = props => {
+const Login = () => {
+  const [user, setUser] = useState();
+  const [pass, setPass] = useState();
   const { Text } = Typography;
+
+  const valueCHangue = e => {
+    console.log(e.target.value);
+  };
   return (
     <div
       style={{
@@ -49,8 +55,8 @@ const Login = props => {
         <Form.Item>
           <Input
             prefix={<Icon type="user" />}
-            style={{ marginBottom: "1rem" }}
-            type="text"
+            value={user}
+            onChange={e => valueCHangue(e)}
           />
         </Form.Item>
 
@@ -65,11 +71,12 @@ const Login = props => {
             prefix={<Icon type="lock" />}
             style={{ marginBottom: "1rem" }}
             type="password"
+            value={pass}
           />
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary">Iniciar Sesión</Button>
+          <Button type="submit">Iniciar sesión</Button>
         </Form.Item>
       </Form>
     </div>
